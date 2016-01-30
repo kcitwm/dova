@@ -1,0 +1,17 @@
+E:\Projects\dova\windows\LogLib\bin\Dova.LogLib.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.LogLib.pdb
+E:\Projects\dova\windows\LogLib\bin\Dova.Data.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.DataAccess.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.Infrastructure.dll
+E:\Projects\dova\windows\LogLib\bin\Newtonsoft.Json.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.Cache.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.FileAccess.dll
+E:\Projects\dova\windows\LogLib\bin\EmitMapper.dll
+E:\Projects\dova\windows\LogLib\bin\Dova.DataAccess.pdb
+E:\Projects\dova\windows\LogLib\bin\Dova.Data.pdb
+E:\Projects\dova\windows\LogLib\bin\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\LogLib\bin\Dova.Cache.pdb
+E:\Projects\dova\windows\LogLib\bin\Dova.FileAccess.pdb
+E:\Projects\dova\windows\LogLib\obj\Debug\LogLib.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\LogLib\obj\Debug\Dova.LogLib.dll
+E:\Projects\dova\windows\LogLib\obj\Debug\Dova.LogLib.pdb

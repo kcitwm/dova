@@ -1,0 +1,27 @@
+﻿ProcessReceive
+
+处理头数据:
+ 1 先得到需要处理的数据大小:remainingBytesToProcess= receiveEventArgs.BytesTransferred; 直接从底层获取
+ 2当receiveSendToken.receivedPrefixBytesDoneCount < this.socketListenerSettings.ReceivePrefixLength的时候,就是头数据还没有收完的时候就一直处理头数据.
+
+ 3receiveSendToken.receivedPrefixBytesDoneCount=0 的时候不创建新的头数据字节数组.
+ 
+ 4当收到的数据>=receiveSendToken.receivePrefixLength - receiveSendToken.receivedPrefixBytesDoneCount 需要处理的头长度减去已经处理的长度的时候,说明至少头信息已经收取完毕了,可以直接读出头
+ 信息然后处理后面的数据.
+
+ 5如果4,就把头数据复制到receiveSendToken.byteArrayForPrefix中计算出真正需要处理的业务数据长度 ,如果收到的是心跳包也继续收.
+                receiveSendToken.lengthOfCurrentIncomingMessage = BitConverter.ToInt32(receiveSendToken.byteArrayForPrefix, 0);
+并直接把头信息已经处理的长度标记为我们设定的长度: receiveSendToken.receivedPrefixBytesDoneCount = receiveSendToken.receivePrefixLength;
+
+  
+6 如果非4,则说明还要继续收取头信息,把remainingBytesToProcess = 0;然后继续收取数据:
+ if (remainingBytesToProcess == 0 || remainingBytesToProcess == -100)//-100表示心跳包 
+
+7. 开始处理业务数据,第一次创建新数据组:
+ if (receiveSendToken.receivedMessageBytesDoneCount == 0)
+            {             
+                receiveSendToken.theDataHolder.dataMessageReceived = new Byte[receiveSendToken.lengthOfCurrentIncomingMessage];
+            }
+
+
+ 

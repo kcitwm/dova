@@ -1,0 +1,31 @@
+package wqfree.com;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserContext {
+
+	public static String UserId="";
+	public static String UserName="";
+	public static String UserMobile="";
+	
+	public static String UserToken="";
+	
+	public static long UserType=1;
+	
+	public static String OrgCode="";
+	public static String OrgName="";
+	
+	public static String GroupId="";
+	public static String GroupName="";
+
+	public static String VehicleCode="";
+	
+
+	 
+	
+	public static ServiceConnectionString uscs=new ServiceConnectionString();
+	
+    public static List<String> Rights=new ArrayList<String>() ;
+	
+}

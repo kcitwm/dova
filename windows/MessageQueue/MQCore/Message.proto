@@ -1,0 +1,22 @@
+﻿option java_package = "Dova.com.mq"; 
+
+option java_outer_classname = "WQMessage"; 
+
+message WQMessage { 
+	optional int     SourceID = 0;
+	optional int     ScenarioID = 0;
+	optional int64    TransactionID = 0; 
+	optional int     ServiceID = 0;
+	optional int     MethodID = 0;
+	optional int     Version = 1;
+	optional int64    KeyID = 0;
+	optional int64    TimeStamp = 0;
+	optional string  RoutingKey ;
+	optional int64    SubRoutingKey =0;
+	required string  ServiceName ;
+	optional string  Body ;
+	optional bool    Async = false;
+	optional string  Autho ;
+	optional string  Format =json;
+	optional bytes  Attachment;
+}

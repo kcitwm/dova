@@ -1,0 +1,13 @@
+{"CmdText":"字符串内容","CmdType":2147483647,"ConnectionString":"字符串内容","DatabaseParameters":[{"DbType":0,"Direction":0,"IsNullable":true,"ParameterName":"字符串内容","Precision":255,"ProviderName":"字符串内容","Scale":255,"Size":2147483647,"SourceColumn":"字符串内容","SourceColumnNullMapping":true,"SourceVersion":0,"Value":{"DatabaseParameter":{"DbType":0,"Direction":0,"IsNullable":true,"ParameterName":"字符串内容","Precision":255,"ProviderName":"字符串内容","Scale":255,"Size":2147483647,"SourceColumn":"字符串内容","SourceColumnNullMapping":true,"SourceVersion":0,"Value":{"DatabaseParameter":null}}}}],"TableName":"字符串内容"}
+
+{"CmdText":"GetTestInfo","CmdType":2147483647,"ConnectionString":"DefaultConnection","TableName":"test"}
+
+{"CmdText":"GetTestInfo","CmdType":1,"ConnectionString":"DefaultConnection","DatabaseParameters":[{"DbType":1,"Direction":1,"IsNullable":true,"ParameterName":"Name","Precision":1,"ProviderName":"System.Data.SqlClient","Scale":1,"Size":1,"SourceColumn":"Name","SourceColumnNullMapping":true,"SourceVersion":1,"Value":"1"}],"TableName":"Test"}
+
+
+可执行:
+{"CmdText":"GetTestInfo","CmdType":1,"ConnectionString":"DefaultConnection","TableName":"test","DatabaseParameters":[]}
+
+测试可执行: 是通过修正参数确认的. 默认值没有解决
+{"CmdText":"GetTestInfo","CmdType":1,"ConnectionString":"DefaultConnection","DatabaseParameters":[{"DbType":11,"ParameterName":"NO","Value":37931619}],"TableName":"Test"}
+
