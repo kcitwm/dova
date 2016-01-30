@@ -1,0 +1,274 @@
+package wqfree.com;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
+import java.nio.channels.ClosedChannelException;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.SocketChannel;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+ 
+
+
+public class EchoClient {
+
+
+	private static DateFormat dateFormatter = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+
+ 
+
+	boolean connected=false;
+
+	String address=UserContext.MessageAddress;
+	int port=UserContext.MessagePort;
+
+	SocketChannel client = null;
+	public EchoClient(){
+
+	}
+
+	public EchoClient(String address,int port){
+		this.address=address;
+		this.port=port;
+	}
+
+	public int send(byte[] data){ 
+		int i=0;
+		while(!connected)  {
+			try{
+				i++;
+				Thread.sleep(2000);
+			}catch(Exception e){}
+			if(i>5) { 
+				return -1;
+			}
+		} 
+		int total = 0;
+		int size = data.length; 
+		int left = size;
+		int sent=-1; 
+		try{ 
+			byte[] sizeData=Utils.toByte(data.length);
+			ByteBuffer sendBuffer=ByteBuffer.allocate(sizeData.length+size);  
+			sendBuffer.put(sizeData);
+			sendBuffer.put(data); // 将数据put进缓冲区 
+			sendBuffer.flip();
+			 while (total < size)
+			{
+				sent = client.write(sendBuffer);
+				total += sent;
+				left -= sent;
+			} 
+		}
+		catch(IOException eo){
+			log("Send to server: 失败 " ); 
+			return -1;
+		}
+		catch(Exception e){ 
+			log("Send to server: 失败 " ); 
+			return -1;
+		}
+		return  sent; 
+	}
+
+	protected void Execute(byte[] receiveData){
+		log(new String(receiveData));
+	}
+
+	public void start(){
+		Thread t=new Thread(runnable);
+		t.start();
+	}
+	
+	int  idleCounter=0;
+	public void startreceive() {
+		Selector selector=null;
+		try {
+			 selector = Selector.open(); // 定义一个记录套接字通道事件的对象
+			 if(null!=client && client.isOpen())
+				 client.close();
+			client = connect(selector); 
+			int echo = -100; // 要发送的数据
+
+			while (true) { 
+				try{
+				ByteBuffer sendbuffer = ByteBuffer.allocate(4); // 定义用来存储发送数据的byte缓冲区
+				ByteBuffer lenBuffer = ByteBuffer.allocate(4);  
+ 
+
+				// 利用循环来读取服务器发回的数据
+				{
+					// 如果客户端连接没有打开就退出循环 
+					// 此方法为查询是否有事件发生如果没有就阻塞,有的话返回事件数量
+					int shijian = selector.select(1000);
+					// 如果没有事件返回循环
+					if (shijian == 0) { 
+						 idleCounter ++;
+						 if( idleCounter>10){
+							sendbuffer.put(Utils.toByte(echo)); // 将数据put进缓冲区 
+							sendbuffer.flip(); // 将缓冲区各标志复位,因为向里面put了数据标志被改变要想从中读取数据发向服务器,就要复位
+							try{
+								client.write(sendbuffer);  
+								idleCounter=0;
+								}
+								catch(ClosedChannelException ie){  
+									reconnect(selector); 
+								}
+								catch(IOException ie){  
+									reconnect(selector); 
+								}
+						 } 
+						 CheckServerClose(selector,client.socket());
+						//client=SocketChannel.open(sa);
+						Thread.sleep(2000);
+						continue;
+					}
+					else 
+						 idleCounter=0;
+					// 定义一个临时的客户端socket对象
+					SocketChannel sc;
+					// 遍例所有的事件
+					for (SelectionKey key : selector.selectedKeys()) {
+						// 删除本次事件
+						selector.selectedKeys().remove(key);
+						// 如果本事件的类型为read时,表示服务器向本客户端发送了数据
+						if (key.isReadable()) {
+							// 将临时客户端对象实例为本事件的socket对象
+							sc = (SocketChannel) key.channel();
+							// 定义一个用于存储所有服务器发送过来的数据
+							ByteArrayOutputStream bos = new ByteArrayOutputStream();
+							// 将缓冲区清空以备下次读取 
+							// 此循环从本事件的客户端对象读取服务器发送来的数据到缓冲区中 
+							try{
+							int len=sc.read(lenBuffer); 
+							byte[] bytes = new byte[4];  
+							lenBuffer.flip();
+							lenBuffer.get(bytes, 0, bytes.length);
+							len=Utils.toInt(bytes);
+							ByteBuffer readBuffer=ByteBuffer.allocate(len);
+							int left=len;
+							int total=0; 
+							long read=0;
+							while ( left>0) {
+								// 将本次读取的数据存到byte流中
+								read=sc.read(readBuffer);
+								if(read>0){
+									total+=read;
+									left-=read;
+									bos.write(readBuffer.array()); 
+									continue;
+								}
+								 
+								// 将缓冲区清空以备下次读取
+								readBuffer.clear();
+							}
+							}
+							catch(IOException e){
+								reconnect(selector);
+							}
+							// 如果byte流中存有数据
+							if (bos.size() > 0) {
+								// 建立一个普通字节数组存取缓冲区的数据
+								Execute(bos.toByteArray()); 
+							} 
+						}
+					}
+				}
+				//Thread.sleep(1000);
+				} 
+				catch (Exception e) {
+					 e.printStackTrace(); 
+				}
+			}
+		} catch (Exception e) {
+			 e.printStackTrace();
+		} finally {
+			// 关闭客户端连接,此时服务器在read读取客户端信息的时候会返回-1
+			
+		}
+	}
+
+	
+	 Runnable runnable = new  Runnable()  {
+			public void run() { 
+				try{  			 
+					startreceive();
+				}
+				catch(Exception e){
+					log("EchoClient:Error:Runnable.run:"+e.getMessage());
+				}
+				//serviceHandler.postDelayed(this,1000L); 
+			}
+		};
+		
+		
+		public  void CheckServerClose(Selector selector,Socket socket){  			
+			   try{    
+				   socket.sendUrgentData(0);//发送1个字节的紧急数据，默认情况下，服务器端没有开启紧急数据处理，不影响正常通信    
+			   }catch(IOException se){ 
+				 reconnect(selector);  
+			   }  
+			   catch (Exception e) {
+				   reconnect(selector); 
+			}
+			}  
+		 
+		public  void  reconnect()  {
+			if(connected) return;
+			try{
+			Selector selector = Selector.open();
+			reconnect(selector);
+			}
+			catch(Exception e){}
+		}
+			
+			
+		private void  reconnect(Selector selector)  { 
+			connected=false;
+			if (client != null) {
+				try {
+					client.close();
+				} catch (IOException e) {
+				} 
+			} 
+			try{  
+				selector=Selector.open();
+				client= connect(selector); 
+				if(null!=client && client.isConnected())
+					connected=true;
+			}
+			catch(Exception e){} 
+		}
+	SocketAddress sa;
+	private SocketChannel connect(Selector selector) throws IOException {
+
+		 sa= new InetSocketAddress(address, port); // 定义一个服务器地址的对象
+
+		SocketChannel client = SocketChannel.open(); // 定义异步客户端
+		client.socket().setOOBInline(true);
+		client.connect(sa);
+		client.configureBlocking(false); // 将客户端设定为异步
+		client.register(selector, SelectionKey.OP_READ); // 在轮讯对象中注册此客户端的读取事件(就是当服务器向此客户端发送数据的时候)
+		while(!client.isOpen()){
+			connect(selector);
+			try{
+				Thread.sleep(3000);
+			}
+			catch(Exception e){}
+		}
+		connected=true;
+		return client;
+	}
+
+	private static void log(Object msg) {
+		System.out.println("CLIENT [" + dateFormatter.format(new Date()) + "]: " + msg);
+	}
+}
