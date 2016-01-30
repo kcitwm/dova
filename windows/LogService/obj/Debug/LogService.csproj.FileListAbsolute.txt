@@ -1,0 +1,10 @@
+E:\Projects\dova\windows\LogService\obj\Debug\LogService.csprojResolveAssemblyReference.cache
+D:\services\LogService01\Config\Behaviors.config
+D:\services\LogService01\Config\Bindings.config
+D:\services\LogService01\Config\Client.config
+D:\services\LogService01\Config\Services.config
+D:\services\LogService01\Dova.LogService.exe.config
+D:\services\LogService01\Dova.LogService.exe
+D:\services\LogService01\Dova.LogService.pdb
+E:\Projects\dova\windows\LogService\obj\Debug\Dova.LogService.exe
+E:\Projects\dova\windows\LogService\obj\Debug\Dova.LogService.pdb

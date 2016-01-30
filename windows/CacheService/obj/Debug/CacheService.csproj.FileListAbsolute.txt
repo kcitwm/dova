@@ -1,0 +1,16 @@
+E:\Projects\dova\windows\CacheService\obj\Debug\CacheService.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\CacheService\bin\Config\Behaviors.config
+E:\Projects\dova\windows\CacheService\bin\Config\Bindings.config
+E:\Projects\dova\windows\CacheService\bin\Config\Client.config
+E:\Projects\dova\windows\CacheService\bin\Config\Services.config
+E:\Projects\dova\windows\CacheService\bin\Dova.CacheService.exe.config
+E:\Projects\dova\windows\CacheService\bin\Dova.CacheService.exe
+E:\Projects\dova\windows\CacheService\bin\Dova.CacheService.pdb
+E:\Projects\dova\windows\CacheService\bin\Dova.Infrastructure.dll
+E:\Projects\dova\windows\CacheService\bin\SocketAsyncServer.dll
+E:\Projects\dova\windows\CacheService\bin\EmitMapper.dll
+E:\Projects\dova\windows\CacheService\bin\Newtonsoft.Json.dll
+E:\Projects\dova\windows\CacheService\bin\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\CacheService\bin\SocketAsyncServer.pdb
+E:\Projects\dova\windows\CacheService\obj\Debug\Dova.CacheService.exe
+E:\Projects\dova\windows\CacheService\obj\Debug\Dova.CacheService.pdb

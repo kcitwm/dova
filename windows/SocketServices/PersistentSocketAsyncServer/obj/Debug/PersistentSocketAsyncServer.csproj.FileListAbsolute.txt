@@ -1,0 +1,10 @@
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\obj\Debug\PersistentSocketAsyncServer.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\PersistentSocketAsyncServer.dll.config
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\PersistentSocketAsyncServer.dll
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\PersistentSocketAsyncServer.pdb
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\Dova.Infrastructure.dll
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\EmitMapper.dll
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\bin\Debug\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\obj\Debug\PersistentSocketAsyncServer.dll
+E:\Projects\dova\windows\SocketServices\PersistentSocketAsyncServer\obj\Debug\PersistentSocketAsyncServer.pdb
