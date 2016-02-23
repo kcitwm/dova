@@ -281,7 +281,7 @@
             {
                 if (msg.Length > limitLength)
                     msg = msg.Substring(0, limitLength / 2);
-                string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat3, Config.AppName, Config.ProcessName, firstCategory, secondCategory, thirdCategory, timeSpan, msg);
+                string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat, firstCategory, secondCategory, thirdCategory, timeSpan, msg);
                 string path = action.ToString();
                 if (logDep == 2)
                     path = firstCategory + "\\" + path;
@@ -299,7 +299,7 @@
             {
                 if (msg.Length > limitLength)
                     msg = msg.Substring(0, limitLength / 2);
-                string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat3, Config.AppName,  firstCategory, secondCategory, thirdCategory,forthCategory, timeSpan, msg);
+                string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat2, firstCategory, secondCategory, thirdCategory,forthCategory, timeSpan, msg);
                 string path = action.ToString();
                 if (logDep == 2)
                     path = firstCategory + "\\" + path;
@@ -313,18 +313,19 @@
 
 
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="action">日志类型</param>
-       /// <param name="firstCategory">应用名</param>
-       /// <param name="secondCategory">进程名</param>
-       /// <param name="thirdCategory">类名</param>
-       /// <param name="forthCategory">方法名</param>
-       /// <param name="fithCategory">标志名</param>
-       /// <param name="timeSpan"></param>
-       /// <param name="msg"></param>
-        public static void Write(LogAction action, string firstCategory, string secondCategory, string thirdCategory, string forthCategory, string fithCategory, long timeSpan, string msg)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action">日志类型</param>
+        /// <param name="dep">记录日志目录深度,根据category 值 为 1 , 2</param>
+        /// <param name="firstCategory">应用名</param>
+        /// <param name="secondCategory">进程名</param>
+        /// <param name="thirdCategory">类名</param>
+        /// <param name="forthCategory">方法名</param>
+        /// <param name="fithCategory">标志名</param>
+        /// <param name="timeSpan"></param>
+        /// <param name="msg"></param>
+        public static void Write(LogAction action,int dep, string firstCategory, string secondCategory, string thirdCategory, string forthCategory, string fithCategory, long timeSpan, string msg)
         {
             if ((LogConfig.LogType & (int)action) != 0)
             {
@@ -332,9 +333,9 @@
                     msg = msg.Substring(0, limitLength / 2);
                 string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat3, firstCategory, secondCategory, thirdCategory, forthCategory,fithCategory, timeSpan, msg);
                 string path = action.ToString();
-                if (logDep == 2)
+                if (dep == 1)
                     path = firstCategory + "\\" + path;
-                else if (logDep == 3)
+                else if (logDep == 2)
                     path = firstCategory + "\\" + secondCategory + "\\" + path;
                 PushLog(logPrex + path, s);
                 s = null;
@@ -353,15 +354,15 @@
         /// <param name="fithCategory">标志名</param>
         /// <param name="timeSpan">执行时间</param>
         /// <param name="msg">日志内容</param>
-        public static void Write(string customType, string firstCategory, string secondCategory, string thirdCategory, string forthCategory, string fithCategory, long timeSpan, string msg)
+        public static void Write(string customType,int dep, string firstCategory, string secondCategory, string thirdCategory, string forthCategory, string fithCategory, long timeSpan, string msg)
         {
             string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t" + string.Format(Config.LogFormat3, Config.AppName, firstCategory, secondCategory, thirdCategory, forthCategory, fithCategory, timeSpan, msg);
             if (msg.Length > limitLength)
                 msg = msg.Substring(0, limitLength / 2);
             string path = customType;
-            if (logDep == 2)
+            if (dep == 1)
                 path = firstCategory + "\\" + path;
-            else if (logDep == 3)
+            else if (dep == 2)
                 path = firstCategory + "\\" + secondCategory + "\\" + path;
             PushLog(logPrex + path, s);
         }
@@ -383,9 +384,9 @@
             if (msg.Length > limitLength)
                 msg = msg.Substring(0, limitLength / 2);
             string path = customType;
-            if (logDep == 2)
+            if (logDep == 1)
                 path = firstCategory + "\\" + path;
-            else if (logDep == 3)
+            else if (logDep == 2)
                 path = firstCategory + "\\" + secondCategory + "\\" + path;
             PushLog(logPrex + path, s);
         }

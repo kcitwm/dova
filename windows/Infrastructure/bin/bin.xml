@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dova.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="M:Dova.WQMessage.#ctor(System.Int32,System.Int32,System.Object)">
+            <summary>
+            基本构造函数
+            </summary>
+            <param name="serviceID">服务ＩＤ号</param>
+            <param name="methodID">方法ＩＤ</param>
+            <param name="body">传输数据</param>
+        </member>
+        <member name="M:Dova.WQMessage.#ctor(System.Int32,System.Int32,System.Int64,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+            全构造函数
+            </summary>
+            <param name="sourceID">来源:发面消息的标志如:业务名称,IP等</param>
+            <param name="scenarioID">业务场景:每个系统全局定义业务场景,相当于业务模块的ID</param>
+            <param name="timeStamp">时间戳</param>
+            <param name="version">消息的版本号,用于控制并发.</param>
+            <param name="transID">事务ID: 根据业务定义场景事务,独立系统事务,全局跨系统事务, 可用SequenceID</param>
+            <param name="serviceID">服务ＩＤ号</param>
+            <param name="methodID">方法ＩＤ</param>
+            <param name="body">传输数据</param>
+        </member>
+        <member name="P:Dova.WQMessage.SourceID">
+            <summary>
+            来源业务ＩＤ
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.ScenarioID">
+            <summary>
+            业务场景:每个系统全局定义业务场景,相当于业务模块的ID
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.TimeStamp">
+            <summary>
+            当前的时间戳
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.Version">
+            <summary>
+            消息的版本号,用于控制并发.
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.TransactionID">
+            <summary>
+            事务ID: 根据业务定义场景事务,独立系统事务,全局跨系统事务, 可用SequenceID
+            默认为随机生成的ＩＤ
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.ServiceID">
+            <summary>
+             请求的服务ID:全公司统一分配的服务ＩＤ号
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.ServiceName">
+            <summary>
+             请求的服务ID:全公司统一分配的服务名
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.MethodID">
+            <summary>
+              操作ＩＤ：操作类型的指示：就是消息类型用于指示接收端收到消息后怎么处理Body
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.MethodName">
+            <summary>
+              操作ＩＤ：操作类型的指示：就是消息类型用于指示接收端收到消息后怎么处理Body
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.KeyID">
+            <summary>
+            业务数据的主健ＩＤ
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.RoutingKey">
+            <summary>
+            路由关键字
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.SubRoutingKey">
+            <summary>
+            子路由关键字
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.Format">
+            <summary>
+            序列化格式 JSON 　BIN XML
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Dova.WQMessage.Body">
+            <summary>
+            消息体：注意所有消息内容，内嵌内容都要标记为可序列化
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse.TransactionID">
+            <summary>
+            事务ID: 根据业务定义场景事务,独立系统事务,全局跨系统事务, 可用SequenceID
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse.KeyID">
+            <summary>
+            业务数据的主健ＩＤ
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse.Status">
+            <summary>
+            业务状态编码
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse.Message">
+            <summary>
+            业务处理消息　
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse.Body">
+            <summary>
+            消息体：注意所有消息内容，内嵌内容都要标记为可序列化
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse`1.TransactionID">
+            <summary>
+            事务ID: 根据业务定义场景事务,独立系统事务,全局跨系统事务, 可用SequenceID
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse`1.KeyID">
+            <summary>
+            业务数据的主健ＩＤ
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse`1.Status">
+            <summary>
+            业务状态编码
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse`1.Message">
+            <summary>
+            业务处理消息　
+            </summary>
+        </member>
+        <member name="P:Dova.DovaResponse`1.Body">
+            <summary>
+            消息体：注意所有消息内容，内嵌内容都要标记为可序列化
+            </summary>
+        </member>
+        <member name="M:Dova.Infrastructure.Exceptions.DoExeption(System.Exception,System.Boolean)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="e">异常</param>
+            <param name="isThrow">是否抛出异常</param>
+        </member>
+        <member name="M:Dova.Infrastructure.Exceptions.DoExeption(System.Exception,System.Boolean,System.String)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="e">异常</param>
+            <param name="isThrow">是否抛出异常</param>
+            <param name="preMsg">添加在异常消息前面的文字</param>
+        </member>
+        <member name="T:Dova.Infrastructure.Utility.SocketClient">
+            <summary>
+            如果是长连接,在关闭程序或者异常的时候注意调用Dispose方法.
+            如果调用异步方法,在DealData里面的控件要异步操作.
+            </summary>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.Request(System.String,System.Object)">
+            <summary>
+            同步发送数据
+            </summary>
+            <param name="topicID">主题ID</param>
+            <param name="obj">发送的数据</param>
+            <param name="keyID">业务主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.RequestMessage(System.String,Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.AsyncRequest(System.String,System.Object)">
+            <summary>
+            同步发送数据
+            </summary>
+            <param name="topicID">主题ID</param>
+            <param name="obj">发送的数据</param>
+            <param name="keyID">业务主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.AsyncRequestMessage(System.String,Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.AsyncRequestMessages(System.String,Dova.WQMessage[])">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.RequestMessage(Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.Send(Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.AsyncRequestMessage(Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.Interfaces.IMessageService.Request(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Dova.MsgQConfig.InnerReceiveInteval">
+            <summary>
+            多少毫秒收取一次消息
+            </summary> 
+        </member>
+        <member name="P:Dova.PlugingItem.DealMode">
+            <summary>
+            是否走确认 1 确认　２　不确认
+            </summary>
+        </member>
+        <member name="P:Dova.PlugingItem.ChannelType">
+            <summary>
+            走同步还是异步　１　同步　２异步
+            </summary>
+        </member>
+        <member name="M:Dova.Services.ServiceFactory`1.Instance(System.String)">
+            <summary>
+            移除散列表中的服务容错，侦测到恢复后再添加回来．
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Dova.ServiceConfigs.InnerServiceType">
+            <summary>
+            1 走同步　2 异步　3 同步和异步
+            </summary>
+        </member>
+        <member name="M:Dova.Utility.EncryptHelper.MD5Encryption(System.String)">
+            <summary>
+            MD5 加密方法 
+            </summary>
+            <param name="word">待加密字符串</param>
+            <returns>MD5加密密文 返回小写串</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dova.Utility.EncryptHelper.Encrypt(System.String,System.String)" -->
+        <member name="M:Dova.Utility.EncryptHelper.Decrypt(System.String,System.String)">
+            <summary>
+            进行DES解密。
+            </summary>
+            <param name="source">要解密的以Base64</param>
+            <param name="key">密钥，且必须为8位。</param>
+            <returns>已解密的字符串。</returns>
+        </member>
+        <member name="T:Dova.Utility.RemoteLog">
+            <summary>
+            日志
+            作者:陈亮
+            日期:2010-06-02
+            </summary>
+        </member>
+        <member name="T:Dova.Utility.Log">
+            <summary>
+            日志
+            作者:陈亮
+            日期:2010-06-02
+            </summary>
+        </member>
+        <member name="M:Dova.Utility.Log.Write(Dova.Utility.LogAction,System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            记录格式化日志
+            </summary>
+            <param name="action">日志类型</param>
+            <param name="firstCategory">类名</param>
+            <param name="secondCategory">方法名</param>
+            <param name="thirdCategory">日志标志</param>
+            <param name="timeSpan">执行时间</param>
+            <param name="msg">日志内容</param>
+        </member>
+        <member name="M:Dova.Utility.Log.Write(Dova.Utility.LogAction,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="action">日志类型</param>
+            <param name="dep">记录日志目录深度,根据category 值 为 1 , 2</param>
+            <param name="firstCategory">应用名</param>
+            <param name="secondCategory">进程名</param>
+            <param name="thirdCategory">类名</param>
+            <param name="forthCategory">方法名</param>
+            <param name="fithCategory">标志名</param>
+            <param name="timeSpan"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Dova.Utility.Log.Write(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            记录自定义目录的格式化日志
+            </summary> 
+            <param name="customType">自定义的日志类型(会新建立一个文件夹)</param>
+            <param name="dir"></param>
+            <param name="firstCategory">应用名</param>
+            <param name="secondCategory">进程名</param>
+            <param name="thirdCategory">类名</param>
+            <param name="forthCategory">方法名</param>
+            <param name="fithCategory">标志名</param>
+            <param name="timeSpan">执行时间</param>
+            <param name="msg">日志内容</param>
+        </member>
+        <member name="M:Dova.Utility.Log.Write(System.String,System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            记录自定义目录的格式化日志
+            </summary> 
+            <param name="customType">自定义的日志类型(会新建立一个文件夹)</param>
+            <param name="dir"></param>
+            <param name="firstCategory">类名</param>
+            <param name="secondCategory">方法名</param>
+            <param name="thirdCategory">日志标志</param>
+            <param name="timeSpan">执行时间</param>
+            <param name="msg">日志内容</param>
+        </member>
+        <member name="T:Dova.Utility.LogAction">
+            <summary>
+            根据需要扩展日志类型
+            </summary>
+        </member>
+        <member name="T:Dova.Config">
+            <summary>
+            所有配置都可以在appSettings里面设置与属性名相同的键.
+            </summary>
+        </member>
+        <member name="F:Dova.Config.LogFormat">
+            <summary>
+            {0} 应用名｛1｝　类名　｛2｝　方法名　｛3｝　执行时间　｛4｝关键参数值和名
+            </summary>
+        </member>
+        <member name="F:Dova.Config.BasePath">
+            <summary>
+            获取设置默认根目录,默认值:AppDomain.CurrentDomain.BaseDirectory
+            可在appSettings设置"BasePath"
+            </summary>        
+        </member>
+        <member name="M:Dova.Config.GetIPHostNameAndMAC">
+            <summary>
+            获取主机名 IP地址 MAC地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.RemoteWRType">
+            <summary>
+            读取操作是否为远程服务类型实例
+            </summary> 
+        </member>
+    </members>
+</doc>

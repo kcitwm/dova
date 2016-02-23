@@ -1,0 +1,11 @@
+E:\Projects\dova\windows\DataAccess\bin\Dova.DataAccess.dll
+E:\Projects\dova\windows\DataAccess\bin\Dova.DataAccess.pdb
+E:\Projects\dova\windows\DataAccess\bin\Dova.Cache.dll
+E:\Projects\dova\windows\DataAccess\bin\Dova.FileAccess.dll
+E:\Projects\dova\windows\DataAccess\bin\Dova.Infrastructure.dll
+E:\Projects\dova\windows\DataAccess\bin\EmitMapper.dll
+E:\Projects\dova\windows\DataAccess\bin\Dova.FileAccess.pdb
+E:\Projects\dova\windows\DataAccess\bin\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\DataAccess\obj\Release\Dova.DataAccess.dll
+E:\Projects\dova\windows\DataAccess\obj\Release\Dova.DataAccess.pdb

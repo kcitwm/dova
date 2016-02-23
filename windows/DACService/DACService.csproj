@@ -71,6 +71,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Config\Dova.Services.config" />
     <None Include="Config\Services.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -79,7 +80,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Config\WQFree.Services.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\DefaultConnection.xml">

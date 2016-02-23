@@ -49,7 +49,11 @@ namespace Dova.Services
         }
 
         protected override void OnStart(string[] args)
-        { 
+        {
+            if (args.Length > 0)
+            {
+                base.ServiceName = args[0];  
+            }
             Log.Write("开始启动服务,ServerModle=" + Config.ServerModel.ToString());
             ChannelType model = (ChannelType)Config.ServerModel;  
             if ((model & ChannelType.Remoting) > 0)

@@ -1,0 +1,15 @@
+E:\Projects\dova\windows\Samples\bin\Release\Dova.Samples.exe.config
+E:\Projects\dova\windows\Samples\bin\Release\Config\Behaviors.config
+E:\Projects\dova\windows\Samples\bin\Release\Config\Bindings.config
+E:\Projects\dova\windows\Samples\bin\Release\Config\Client.config
+E:\Projects\dova\windows\Samples\bin\Release\Config\Services.config
+E:\Projects\dova\windows\Samples\bin\Release\Dova.Samples.exe
+E:\Projects\dova\windows\Samples\bin\Release\Dova.Samples.pdb
+E:\Projects\dova\windows\Samples\bin\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\Samples\bin\Release\Newtonsoft.Json.dll
+E:\Projects\dova\windows\Samples\bin\Release\EmitMapper.dll
+E:\Projects\dova\windows\Samples\bin\Release\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\Samples\obj\Release\Samples.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\Samples\obj\Release\Dova.Samples.exe
+E:\Projects\dova\windows\Samples\obj\Release\Dova.Samples.pdb
+E:\Projects\dova\windows\Samples\bin\Release\Config\Dova.Services.config
