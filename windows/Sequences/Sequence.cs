@@ -1,6 +1,6 @@
 ﻿using Dova;
 using Dova.Data;
-using Dova.Infrastructure;
+using Dova.Interfaces;
 using Dova.Utility;
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,9 @@ namespace Dova.Sequences
             providerName = css.ProviderName;
         }
 
-        public long[] Get(string seqName, int total)
+        public long  Get(string seqName  )
         {
+            int total = 1;
             DataHelper hp = new DataHelper(connString, providerName);
             DbParameter[] pars = new DbParameter[4];
             DbParameter startPar, endPar;
@@ -46,7 +47,7 @@ namespace Dova.Sequences
             long end = (long)endPar.Value;
             //Log.Write(LogAction.Write, seqName + ":" + start + " " + end);
             if (end - start == total - 1)
-                return new long[2] { start, end };
+                return  end;
             string msg = "多取" + seqName + "返回异常,返回数量和指定数量不合:total=" + total + " start=" + start + " end=" + end;
             Log.Error(msg);
             throw new DataException(msg);

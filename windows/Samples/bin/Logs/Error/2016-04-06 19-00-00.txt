@@ -1,0 +1,9 @@
+2016-04-06 19:30:34.303:System:远程服务器返回错误: (404) 未找到。    在 System.Net.HttpWebRequest.GetResponse()
+   在 Dova.Utility.HttpHelper.Request(String url, String datas, String method, String contentType, String coding) 位置 E:\Projects\dova\windows\Infrastructure\Utility\HttpHelper.cs:行号 30
+2016-04-06 19:33:24.874:System:远程服务器返回错误: (400) 错误的请求。    在 System.Net.HttpWebRequest.GetResponse()
+   在 Dova.Utility.HttpHelper.Request(String url, String datas, String method, String contentType, String coding) 位置 E:\Projects\dova\windows\Infrastructure\Utility\HttpHelper.cs:行号 30
+2016-04-06 19:52:57.345:System:无法连接到远程服务器    在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Dova.Utility.HttpHelper.Request(String url, String datas, String method, String contentType, String coding) 位置 E:\Projects\dova\windows\Infrastructure\Utility\HttpHelper.cs:行号 25
+2016-04-06 19:58:47.438:System:远程服务器返回错误: (404) 未找到。    在 System.Net.HttpWebRequest.GetResponse()
+   在 Dova.Utility.HttpHelper.Request(String url, String datas, String method, String contentType, String coding) 位置 E:\Projects\dova\windows\Infrastructure\Utility\HttpHelper.cs:行号 30

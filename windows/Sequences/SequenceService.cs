@@ -27,14 +27,19 @@ namespace Dova.Sequences
             return;
         }
 
-        public static long[] Get(string seqName, int total)
+        public static long  Get(string seqName)
         {
-            return iseq.Get(seqName, total);
+            Log.Write("seqName:" + seqName+ " total:"+ 1);
+            return iseq.Get(seqName);
         }
 
         public static long[] Get(string seqName, int total, out DateTime getTime)
         {
-            return iseq.Get(seqName, total, out getTime);
+            getTime = DateTime.Now;
+            return new long[] { 1, 2, 3 };
+
+
+            //return iseq.Get(seqName, total, out getTime);
         }
 
     }

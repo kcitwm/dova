@@ -1,0 +1,15 @@
+E:\Projects\dova\windows\Sequences\obj\Release\Sequences.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Sequences.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Sequences.pdb
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.DataAccess.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Newtonsoft.Json.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Cache.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.FileAccess.dll
+E:\Projects\dova\windows\Sequences\bin\Release\EmitMapper.dll
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.DataAccess.pdb
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.Cache.pdb
+E:\Projects\dova\windows\Sequences\bin\Release\Dova.FileAccess.pdb
+E:\Projects\dova\windows\Sequences\obj\Release\Dova.Sequences.dll
+E:\Projects\dova\windows\Sequences\obj\Release\Dova.Sequences.pdb

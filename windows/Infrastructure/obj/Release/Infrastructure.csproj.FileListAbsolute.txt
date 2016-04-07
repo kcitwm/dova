@@ -1,0 +1,7 @@
+E:\Projects\dova\windows\Infrastructure\bin\Dova.Infrastructure.dll
+E:\Projects\dova\windows\Infrastructure\bin\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\Infrastructure\bin\bin.xml
+E:\Projects\dova\windows\Infrastructure\bin\EmitMapper.dll
+E:\Projects\dova\windows\Infrastructure\bin\Newtonsoft.Json.dll
+E:\Projects\dova\windows\Infrastructure\obj\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\Infrastructure\obj\Release\Dova.Infrastructure.pdb

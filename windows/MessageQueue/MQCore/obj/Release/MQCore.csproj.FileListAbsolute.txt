@@ -1,0 +1,17 @@
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Release\WQFree.MQCore.xml
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.MQCore.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.MQCore.pdb
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\WQFree.MQCore.xml
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.DataAccess.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.Infrastructure.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Newtonsoft.Json.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.Cache.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.FileAccess.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\EmitMapper.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.DataAccess.pdb
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.Cache.pdb
+E:\Projects\dova\windows\MessageQueue\MQCore\bin\Dova.FileAccess.pdb
+E:\Projects\dova\windows\MessageQueue\MQCore\obj\Release\MQCore.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\MessageQueue\MQCore\obj\Release\Dova.MQCore.dll
+E:\Projects\dova\windows\MessageQueue\MQCore\obj\Release\Dova.MQCore.pdb

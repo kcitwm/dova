@@ -4,16 +4,19 @@ using System.ServiceModel;
 using System.Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.ServiceModel.Web;
 
-namespace Dova.Infrastructure
+namespace Dova.Interfaces
 {
     [ServiceContract(ProtectionLevel = ProtectionLevel.None)]
     public interface ISequence
     {
         [OperationContract]
-        long[] Get(string seqName, int total);
+        [WebInvoke(Method = "GET", UriTemplate = "/{seqName}",  ResponseFormat = WebMessageFormat.Json)]
+        long Get(string seqName);
 
-        [OperationContract(Name="GetByTime")]
-        long[] Get(string seqName, int total,out DateTime getTime);
+        //[WebGet( UriTemplate = "/get2/seqName={seqName}&total={total}&getTime={getTime}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //[OperationContract(Name="GetByTime")]
+        //long[] Get(string seqName, int total, DateTime getTime);
     }
 }

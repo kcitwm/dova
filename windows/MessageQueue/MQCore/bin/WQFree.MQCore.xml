@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dova.MQCore</name>
+    </assembly>
+    <members>
+        <member name="F:Dova.MessageQueue.MessageClient.startFormat">
+            <summary>
+            {0} 服务名   {1}消息
+            </summary>
+        </member>
+        <member name="F:Dova.MessageQueue.MessageClient.endFormat">
+            <summary>
+            {0} 服务名   {1}消息
+            </summary>
+        </member>
+        <member name="F:Dova.MessageQueue.MessageClient.errorFormat">
+            <summary>
+            {0} 服务名 {1} TransactionID {2}消息
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageClient.Request``1(System.String,System.Object)">
+            <summary>
+            同步:发送数据
+            </summary>
+            <param name="serviceName">
+            服务名:
+            根据应用程序配置：config传递你需要请求的服务．
+            </param>
+            <param name="obj">
+            发送的数据：
+            任何类型数据，要求标记为可序列化．
+            </param>　
+            <returns>请求响应的数据</returns> 
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dova.MessageQueue.MessageClient.Request``1(System.String,System.String,System.Object)" -->
+        <member name="M:Dova.MessageQueue.MessageClient.RequestMessage``1(System.String,Dova.WQMessage)">
+            <summary>
+            同步:根据主题发送统一格式消息
+            </summary>
+            <param name="serviceName">
+            服务名:
+            根据应用程序配置：config传递你需要请求的服务．
+            </param>
+            <param name="obj">
+            发送的数据：
+            统一格式数据，要求标记为可序列化．
+            </param>
+            <returns>请求响应的数据</returns> 
+        </member>
+        <member name="M:Dova.MessageQueue.MessageClient.AsyncRequestMessage(System.String,Dova.WQMessage)">
+            <summary>
+            异步:根据主题发送统一格式消息
+            </summary>
+            <param name="serviceName">
+            服务名:
+            根据应用程序配置：config传递你需要请求的服务．
+            </param>
+            <param name="obj">
+            发送的数据：
+            统一格式数据，要求标记为可序列化．
+            </param>
+            <returns>请求响应的数据</returns> 
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dova.MessageQueue.MessageClient.RequestMessage``1(System.String,System.String,Dova.WQMessage)" -->
+        <member name="T:Dova.MessageQueue.MessageHandler">
+            <summary>
+            消息处理基类
+            </summary>
+        </member>
+        <member name="F:Dova.MessageQueue.MessageHandler.startFormat">
+            <summary>
+            {0} 服务名   {1}消息
+            </summary>
+        </member>
+        <member name="F:Dova.MessageQueue.MessageHandler.endFormat">
+            <summary>
+            {0} 服务名   {1}消息
+            </summary>
+        </member>
+        <member name="F:Dova.MessageQueue.MessageHandler.errorFormat">
+            <summary>
+            {0} 服务名 {1} TransactionID {2}消息
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.Init">
+            <summary>
+            初始化插件组
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.CreateInstance``1(System.String)">
+            <summary>
+            创建handler
+            </summary>
+            <typeparam name="T"></typeparam> 
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteMQ(System.String,System.Collections.Generic.List{Dova.WQMessage})">
+            <summary>
+            异步模式:处理多条统一格式消息
+            </summary>
+            <param name="msgs">消息集合</param>
+            <returns>处理成功的条数</returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.AsyncExecuteMQ(System.String,Dova.WQMessage)">
+            <summary>
+            异步模式:单条处理统一格式消息
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteObjectMQ(System.String,System.Object)">
+            <summary>
+            异步模式:单条处理统一格式消息
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.Execute(System.String,System.Object,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteMessage(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+             
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.AsyncExecute(System.String,System.Object)">
+            <summary>
+            异步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.DoExecuteRequest(System.String,System.Object,System.Boolean)">
+            <summary>
+             
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.DoExecuteRequest(System.String,System.Boolean)">
+            <summary>
+             
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteRequest(System.String)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.ExecuteMessageRequest(System.String,Dova.WQMessage)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageHandler.Execute(System.String,System.String,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.Request(System.String,System.Object)">
+            <summary>h
+            同步发送数据
+            </summary>
+            <param name="topicID">主题ID</param>
+            <param name="obj">发送的数据</param> 
+            <param name="keyID">业务主键</param>
+            <returns></returns> 
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.Request(System.String)">
+            <summary>
+            同步发送数据
+            </summary>
+            <param name="topicID">主题ID</param>
+            <param name="obj">发送的数据</param> 
+            <param name="keyID">业务主键</param>
+            <returns></returns> 
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.AsyncRequest(System.String,System.Object)">
+            <summary>h
+            异步发送数据
+            </summary>
+            <param name="topicID">主题ID</param>
+            <param name="obj">发送的数据</param> 
+            <param name="keyID">业务主键</param>
+            <returns></returns> 
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.AsyncRequestMessage(System.String,Dova.WQMessage)">
+            <summary>
+            异步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.AsyncRequestMessages(System.String,Dova.WQMessage[])">
+            <summary>
+            异步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.RequestMessage(System.String,Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>  
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.AsyncRequestMessage(Dova.WQMessage)">
+            <summary>
+            异步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:Dova.MessageQueue.MessageService.RequestMessage(Dova.WQMessage)">
+            <summary>
+            同步根据主题发送自定义消息
+            </summary>
+            <param name="topicID"></param>
+            <param name="msg"></param>
+            <returns></returns>  
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.ExecuteMQ(System.String,System.Collections.Generic.List{Dova.WQMessage})">
+            <summary>
+            异步模式:处理多条统一格式消息
+            </summary>
+            <param name="msgs">消息集合</param>
+            <returns>处理成功的条数</returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.ExecuteMQ(System.String,Dova.WQMessage)">
+            <summary>
+            异步模式:单条处理统一格式消息
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.ExecuteObjectMQ(System.String,System.Object)">
+            <summary>
+            异步模式:单条处理统一格式消息
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理普通消息格式
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.DoExecuteRequest(System.String,System.Object,System.Boolean)">
+            <summary>
+            同步模式:处理统一消息模式
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.DoExecuteRequest(System.String,System.Boolean)">
+            <summary>
+            同步模式:处理统一消息模式
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.ExecuteMessageRequest(System.String,Dova.WQMessage)">
+            <summary>
+            同步模式:处理统一消息模式
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.IMessageHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理统一消息模式
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.ProxyHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.ProxyHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.ProxyHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.TestHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.TestHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.TestHandler.ExecuteMessageRequest(System.String,Dova.WQMessage)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.RoutingProxyHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.RoutingProxyHandler.Routing(System.String,System.Object)">
+            <summary>
+            根据Message路由接收端
+            </summary>
+            <param name="serviceName"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.RoutingProxyHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.RoutingProxyHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.AsyncDispatchHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.AsyncDispatchHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.AsyncDispatchHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.AsyncRoutingHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.AsyncRoutingHandler.ExecuteRequest(System.String,System.Object)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dova.MessageQueue.AsyncRoutingHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.HttpHandler">
+            <summary>
+            http服务转发类, 
+            </summary>
+        </member>
+        <member name="M:Dova.MessageQueue.HttpHandler.DoExecuteMessageRequest(System.String,Dova.WQMessage,System.Boolean)">
+            <summary>
+            同步模式:处理
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dova.MessageQueue.SubAsyncDispatchHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+        <member name="T:Dova.MessageQueue.SubAsyncRoutingHandler">
+            <summary>
+            服务转发类
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+E:\Projects\dova\windows\Cache\bin\Release\Dova.Cache.dll
+E:\Projects\dova\windows\Cache\bin\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\Cache\bin\Release\Newtonsoft.Json.dll
+E:\Projects\dova\windows\Cache\bin\Release\EmitMapper.dll
+E:\Projects\dova\windows\Cache\bin\Release\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\Cache\obj\Release\Cache.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\Cache\obj\Release\Dova.Cache.dll

@@ -1,0 +1,9 @@
+E:\Projects\dova\windows\FileAccess\bin\Release\Dova.FileAccess.dll
+E:\Projects\dova\windows\FileAccess\bin\Release\Dova.FileAccess.pdb
+E:\Projects\dova\windows\FileAccess\bin\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\FileAccess\bin\Release\Newtonsoft.Json.dll
+E:\Projects\dova\windows\FileAccess\bin\Release\EmitMapper.dll
+E:\Projects\dova\windows\FileAccess\bin\Release\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\FileAccess\obj\Release\FileAccess.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\FileAccess\obj\Release\Dova.FileAccess.dll
+E:\Projects\dova\windows\FileAccess\obj\Release\Dova.FileAccess.pdb

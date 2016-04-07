@@ -120,6 +120,13 @@ namespace Dova.Data
             return res;
         }
 
+        public int Authentication(string token)
+        {
+            int rtn = -1;
+
+            return rtn;
+        }
+
         public virtual IDataReader ExecuteDataReader(string connString, string cmdText, CommandType cmdType, params DatabaseParameter[] parameters)
         {
             long t = DateTime.Now.Ticks;

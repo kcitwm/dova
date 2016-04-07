@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4495A587-0D89-4382-9CB7-01F0592C9657}"
 EndProject
@@ -52,6 +52,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{82C9675D-A
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DovaHandlers", "DovaHandlers\DovaHandlers.csproj", "{648EE316-A319-42B8-9E11-E0C2573D9490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceServices", "SequenceServices\SequenceServices.csproj", "{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -354,6 +356,24 @@ Global
 		{648EE316-A319-42B8-9E11-E0C2573D9490}.Silverlight2|Any CPU.Build.0 = Release|Any CPU
 		{648EE316-A319-42B8-9E11-E0C2573D9490}.Unity|Any CPU.ActiveCfg = Release|Any CPU
 		{648EE316-A319-42B8-9E11-E0C2573D9490}.Unity|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.CoreOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.CoreOnly|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Develog|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Develog|Any CPU.Build.0 = Debug|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.iOS|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Net20|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Net20|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Silverlight2|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Silverlight2|Any CPU.Build.0 = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Unity|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0544E-1133-48D4-86A2-0023ADA3ECAF}.Unity|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

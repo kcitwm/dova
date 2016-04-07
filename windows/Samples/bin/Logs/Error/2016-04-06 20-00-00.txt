@@ -1,0 +1,2 @@
+2016-04-06 20:09:10.242:System:远程服务器返回错误: (400) 错误的请求。    在 System.Net.HttpWebRequest.GetResponse()
+   在 Dova.Utility.HttpHelper.Request(String url, String datas, String method, String contentType, String coding) 位置 E:\Projects\dova\windows\Infrastructure\Utility\HttpHelper.cs:行号 30

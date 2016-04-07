@@ -19,8 +19,25 @@ using System.Threading;
 
 namespace MsgqTest
 {
+
+
     class Program
     {
+
+
+        static string seqUrl = Dova.Config.Get("SequenceUrl", "http://121.196.233.49:19001/SequenceService1/InviteCode");
+
+
+        public static  string GetInviteCode()
+        {
+            string code = string.Empty;
+            //code = HttpHelper.Request(seqUrl, @"{""seqName"":""InviteCode"",""total"":1}", "POST", "text/json", "UTF-8");
+            code = HttpHelper.Request(seqUrl, "", "GET", "text/json", "UTF-8");
+            return code;
+
+        }
+
+
 
         private static void RegistProperties(object obj)
         {
@@ -31,6 +48,11 @@ namespace MsgqTest
 
         static void Main(string[] args)
         {
+
+            string code = GetInviteCode();
+            Console.WriteLine("code:"+ code);
+            Console.Read();
+            return;
             Console.WriteLine("请输入消息类型: 1 消息接收者  2. 消息生产者  3. 心跳-100");
             string type = Console.ReadLine();
             Console.WriteLine("请输入模拟用户数量");

@@ -1,0 +1,9 @@
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\SocketAsyncServer.dll
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\SocketAsyncServer.pdb
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\Dova.Infrastructure.dll
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\Newtonsoft.Json.dll
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\EmitMapper.dll
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\bin\Release\Dova.Infrastructure.pdb
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\obj\Release\SocketAsyncServer.csprojResolveAssemblyReference.cache
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\obj\Release\SocketAsyncServer.dll
+E:\Projects\dova\windows\SocketServices\SocketAsyncServer\obj\Release\SocketAsyncServer.pdb
