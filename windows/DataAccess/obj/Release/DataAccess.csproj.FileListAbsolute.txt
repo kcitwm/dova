@@ -3,7 +3,10 @@ E:\Projects\dova\windows\DataAccess\bin\Dova.DataAccess.pdb
 E:\Projects\dova\windows\DataAccess\bin\Dova.Cache.dll
 E:\Projects\dova\windows\DataAccess\bin\Dova.FileAccess.dll
 E:\Projects\dova\windows\DataAccess\bin\Dova.Infrastructure.dll
+<<<<<<< HEAD
 E:\Projects\dova\windows\DataAccess\bin\Newtonsoft.Json.dll
+=======
+>>>>>>> origin/master
 E:\Projects\dova\windows\DataAccess\bin\EmitMapper.dll
 E:\Projects\dova\windows\DataAccess\bin\Dova.FileAccess.pdb
 E:\Projects\dova\windows\DataAccess\bin\Dova.Infrastructure.pdb

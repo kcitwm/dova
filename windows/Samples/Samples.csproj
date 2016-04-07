@@ -76,38 +76,27 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Config\Behaviors.config">
+    <Content Include="Config\Behaviors.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\Bindings.config">
+    </Content>
+    <Content Include="Config\Bindings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Client.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Config\Client.config">
+    </Content>
+    <Content Include="Config\Dova.Services.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Config\Dova.Services.config" />
-    <None Include="Config\Services.config">
+    </Content>
+    <Content Include="Config\Services.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{74232002-8d94-4ec4-ad75-84a5b8154345}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{e5b1db54-756c-4cd4-a0b0-af69cf6733ac}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{4495a587-0d89-4382-9cb7-01f0592c9657}</Project>
       <Name>Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MessageQueue\MQCore\MQCore.csproj">
-      <Project>{8ee470dd-5dc8-470f-a336-85f9855e2434}</Project>
-      <Name>MQCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

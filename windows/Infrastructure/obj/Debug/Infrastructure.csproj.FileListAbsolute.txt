@@ -4,3 +4,7 @@ E:\Projects\dova\windows\Infrastructure\bin\EmitMapper.dll
 E:\Projects\dova\windows\Infrastructure\bin\Newtonsoft.Json.dll
 E:\Projects\dova\windows\Infrastructure\obj\Debug\Dova.Infrastructure.dll
 E:\Projects\dova\windows\Infrastructure\obj\Debug\Dova.Infrastructure.pdb
+<<<<<<< HEAD
+=======
+E:\Projects\dova\windows\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
+>>>>>>> origin/master

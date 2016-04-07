@@ -19,6 +19,11 @@ using System.Text;
     /// </summary>
     public class Config
     {
+
+
+        public static string AppName = Process.GetCurrentProcess().MainModule.ModuleName;
+        public static string ProcessName = Process.GetCurrentProcess().ProcessName;
+
         /// <summary>
         /// {0} 应用名｛1｝　类名　｛2｝　方法名　｛3｝　执行时间　｛4｝关键参数值和名
         /// </summary>
@@ -204,9 +209,9 @@ using System.Text;
             CacheConfigName = Config.Get("CacheConfigName", CacheConfigName);
             logPrexs = HostIPMAC[0] + "\t" + HostIPMAC[1] + "\t" + HostIPMAC[2] + "\t" + AppDomainPath + "\t";
             IsEndPoint = Config.Get("IsEndPoint", IsEndPoint);
-            LogFormat = logPrexs + AppName + "\t" + LogFormat;
-			LogFormat2 = logPrexs + LogFormat2;
-			LogFormat3 = logPrexs + LogFormat3;
+            LogFormat = logPrexs + AppName + "\t" + ProcessName+"\t"+ LogFormat;
+			LogFormat2 = logPrexs + AppName + "\t" + ProcessName + "\t"  + LogFormat2;
+			LogFormat3 = logPrexs + AppName + "\t" + ProcessName + "\t" + LogFormat3;
         }
 
         static Config()
@@ -287,9 +292,6 @@ using System.Text;
             return name;
         }
 
-
-        public static string AppName = Process.GetCurrentProcess().MainModule.ModuleName;
-        public static string ProcessName = Process.GetCurrentProcess().ProcessName;
     }
 }
 

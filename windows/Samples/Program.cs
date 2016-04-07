@@ -1,8 +1,6 @@
 ﻿
 using Dova;
-using Dova.Data;
 using Dova.Infrastructure.Utility;
-using Dova.MessageQueue;
 using Dova.Services;
 using Dova.Utility;
 using System;
@@ -45,13 +43,31 @@ namespace MsgqTest
             dict["UserData"] = "一定要通过啊";
         }
 
+        static void TestLog()
+        {
+
+            long t = DateTime.Now.Ticks;
+            Log.Write("一般日志");
+            for (int i = 1; i < 10000; i++)
+            { 
+                Log.Write(LogAction.Info, "Program", "Main", "Test", DateTime.Now.Ticks - t, "测试日志服务 " + i);
+                Console.WriteLine("打完100条");
+                Thread.Sleep(1000);
+            }
+            Console.Write("日志测试完成!");
+            Console.ReadLine();
+        }
 
         static void Main(string[] args)
         {
+<<<<<<< HEAD
 
             string code = GetInviteCode();
             Console.WriteLine("code:"+ code);
             Console.Read();
+=======
+            TestLog();
+>>>>>>> origin/master
             return;
             Console.WriteLine("请输入消息类型: 1 消息接收者  2. 消息生产者  3. 心跳-100");
             string type = Console.ReadLine();
@@ -64,10 +80,10 @@ namespace MsgqTest
 
                 if (type == "1")
                     ts = new ParameterizedThreadStart(TestSocketConsumerMQService);
-                else if(type=="2")
+                else if (type == "2")
                     ts = new ParameterizedThreadStart(TestSocketProcuderMQService);
                 else
-                    ts = new ParameterizedThreadStart(TestSocktHeartBeat); 
+                    ts = new ParameterizedThreadStart(TestSocktHeartBeat);
                 mt = new Thread(ts);
                 mt.Start(i);
             }
@@ -149,17 +165,17 @@ namespace MsgqTest
                     long time = DateTime.Now.Ticks;
                     if (t == 1)
                     {
-                        res = MessageClient.RequestMessage<DovaResponse<string>>(name, msg);
+                        // res = MessageClient.RequestMessage<DovaResponse<string>>(name, msg);
                         Console.WriteLine("用时:" + ((DateTime.Now.Ticks - time) / 10000000.000) + ";返回消息:" + res.Message);
                     }
                     else if (t == 2)
                     {
-                        ret = MessageClient.AsyncRequestMessage(name, msg);
+                        // ret = MessageClient.AsyncRequestMessage(name, msg);
                         Console.WriteLine(ret.ToString());
                     }
                     else if (t == 3)
                     {
-                        ret = MessageClient.AsyncRequestMessage(name, msg);
+                        // ret = MessageClient.AsyncRequestMessage(name, msg);
                         Console.WriteLine(ret.ToString());
                     }
                 }
@@ -172,6 +188,9 @@ namespace MsgqTest
             }
             Console.ReadLine();
         }
+
+
+
 
         delegate void PointDelegate();
         static string eccMonitorKey = "6094c672bfd59334b2242958d3b29620";
@@ -229,7 +248,7 @@ namespace MsgqTest
                 if (n < 0) n = 1;
                 object res;
 
-                MessageService ms = new MessageService();
+                // MessageService ms = new MessageService();
                 for (int i = 0; i < n; i++)
                 {
 
@@ -244,17 +263,17 @@ namespace MsgqTest
                     long time = DateTime.Now.Ticks;
                     if (t == 1)
                     {
-                        res = ms.RequestMessage(name, msg);
-                        Console.WriteLine("用时:" + ((DateTime.Now.Ticks - time) / 10000000.000) + ";返回消息:" + res.ToString());
+                        //res = ms.RequestMessage(name, msg);
+                        // Console.WriteLine("用时:" + ((DateTime.Now.Ticks - time) / 10000000.000) + ";返回消息:" + res.ToString());
                     }
                     else if (t == 2)
                     {
-                        ret = ms.AsyncRequestMessage(name, msg);
+                        // ret = ms.AsyncRequestMessage(name, msg);
                         Console.WriteLine(ret.ToString());
                     }
                     else if (t == 3)
                     {
-                        ret = ms.AsyncRequestMessage(name, msg);
+                        // ret = ms.AsyncRequestMessage(name, msg);
                         Console.WriteLine(ret.ToString());
                     }
                 }
@@ -281,7 +300,7 @@ namespace MsgqTest
             byte[] bs = null;
             byte[] resbs = null;
             string res = "";
-            res=MessageClient.Send<string>(ms);
+            // res=MessageClient.Send<string>(ms);
 
             Console.WriteLine("第一次连接注册消息消费者:" + res);
 
@@ -289,10 +308,10 @@ namespace MsgqTest
             {
                 try
                 {
-                    WQMessage rec = MessageClient.Receive<WQMessage>(ms.AppName, ms.Format);
-                    if (null != rec)
-                    { 
-                        Console.WriteLine("消息消费者收到消息:" + rec);
+                    //WQMessage rec = MessageClient.Receive<WQMessage>(ms.AppName, ms.Format);
+                    // if (null != rec)
+                    {
+                        //     Console.WriteLine("消息消费者收到消息:" + rec);
                     }
                 }
                 catch (Exception e)
@@ -342,12 +361,12 @@ namespace MsgqTest
 
             WQMessage ms = new WQMessage();
             ms.Async = false; //异步
-            ms.UserToken = "消息生产者"+ti;//取一个唯一标志自己
+            ms.UserToken = "消息生产者" + ti;//取一个唯一标志自己
             ms.ServiceName = "LoginService";//推送消息
             ms.Body = "json串";//json 对象串
             string reg = "";
-            reg=MessageClient.Send<string>(ms);
-             Console.WriteLine("成功发送且返回了刚才发送的消息:" + reg); 
+            //reg=MessageClient.Send<string>(ms);
+            Console.WriteLine("成功发送且返回了刚才发送的消息:" + reg);
 
             byte[] bs = null;
             byte[] recd = null;
@@ -368,12 +387,12 @@ namespace MsgqTest
                 ms.Message = "i";
                 long t = DateTime.Now.Ticks;
                 //MessageClient.SendOneWay<string>(ms);
-                string rem = MessageClient.Send<string>(ms);
-                Console.WriteLine("成功发送且返回了刚才发送的消息耗时:" + (DateTime.Now.Ticks - t) + "  " + rem);
-                 
+                //string rem = MessageClient.Send<string>(ms);
+                //Console.WriteLine("成功发送且返回了刚才发送的消息耗时:" + (DateTime.Now.Ticks - t) + "  " + rem);
+
                 //Console.WriteLine("回车再次发送");
                 //Console.ReadLine();
-                 if (i > 1) break;
+                if (i > 1) break;
             }
 
             return;
@@ -411,14 +430,14 @@ namespace MsgqTest
                 recd = TcpHelper.ReceiveVar(scconsumer, 4);
                 if (null != recd)
                 {
-                      res = Encoding.UTF8.GetString(recd);
+                    res = Encoding.UTF8.GetString(recd);
                     Log.Info("成功发送且返回了刚才发送的消息:" + res + " 耗时:" + (DateTime.Now.Ticks - t));
                     Console.WriteLine("成功发送且返回了刚才发送的消息:" + res);
                 }
                 //Thread.Sleep(100);
                 //Console.WriteLine("回车再次发送");
                 //Console.ReadLine();
-            } 
+            }
         }
 
         static void TestSocktHeartBeat(object ti)
@@ -430,13 +449,13 @@ namespace MsgqTest
             TcpHelper.Send(scconsumer, bs);
             byte[] recd = TcpHelper.Receive(scconsumer, 4);
             if (null != recd)
-            { 
-                Console.WriteLine("成功发送且返回了刚才发送的消息:" + BitConverter.ToInt32(recd,0));
+            {
+                Console.WriteLine("成功发送且返回了刚才发送的消息:" + BitConverter.ToInt32(recd, 0));
             }
             //Console.WriteLine("请按任意键给消费者发送消息");
             Console.ReadLine();
-          
-        } 
+
+        }
 
 
     }
@@ -452,7 +471,7 @@ namespace MsgqTest
 
 }
 
- 
+
 
 
 

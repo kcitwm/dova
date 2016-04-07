@@ -9,7 +9,10 @@ E:\Projects\dova\windows\LogService\bin\Release\Dova.Data.dll
 E:\Projects\dova\windows\LogService\bin\Release\Dova.DataAccess.dll
 E:\Projects\dova\windows\LogService\bin\Release\Dova.Infrastructure.dll
 E:\Projects\dova\windows\LogService\bin\Release\Dova.LogLib.dll
+<<<<<<< HEAD
 E:\Projects\dova\windows\LogService\bin\Release\Newtonsoft.Json.dll
+=======
+>>>>>>> origin/master
 E:\Projects\dova\windows\LogService\bin\Release\Dova.Cache.dll
 E:\Projects\dova\windows\LogService\bin\Release\Dova.FileAccess.dll
 E:\Projects\dova\windows\LogService\bin\Release\EmitMapper.dll

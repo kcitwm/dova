@@ -16,7 +16,7 @@
     using System.Data;
     using System.Data.Common;
     using System.Data.SqlClient;
-    using System.ServiceModel; 
+    using System.ServiceModel;
 
 
 
@@ -51,11 +51,11 @@
                 schema.Columns.Add("IP", typeof(string));
                 schema.Columns.Add("MAC", typeof(string));
                 schema.Columns.Add("AppPath", typeof(string));
+                schema.Columns.Add("AppName", typeof(string));
+                schema.Columns.Add("ProcessName", typeof(string));
                 schema.Columns.Add("FirstCag", typeof(string));
                 schema.Columns.Add("SecondCag", typeof(string));
-                schema.Columns.Add("ThirdCag", typeof(string));
-                schema.Columns.Add("ForthCag", typeof(string));
-                schema.Columns.Add("FifthCag", typeof(string));
+                schema.Columns.Add("ThirdCag", typeof(string)); 
                 schema.Columns.Add("MonitorValue", typeof(double));
                 schema.Columns.Add("Msg", typeof(string));
                 mappings[0] = new SqlBulkCopyColumnMapping("MonitorAction", "MonitorAction");
@@ -64,11 +64,11 @@
                 mappings[3] = new SqlBulkCopyColumnMapping("IP", "IP");
                 mappings[4] = new SqlBulkCopyColumnMapping("MAC", "MAC");
                 mappings[5] = new SqlBulkCopyColumnMapping("AppPath", "AppPath");
-                mappings[6] = new SqlBulkCopyColumnMapping("FirstCag", "FirstCag");
-                mappings[7] = new SqlBulkCopyColumnMapping("SecondCag", "SecondCag");
-                mappings[8] = new SqlBulkCopyColumnMapping("ThirdCag", "ThirdCag");
-                mappings[9] = new SqlBulkCopyColumnMapping("ForthCag", "ForthCag");
-                mappings[10] = new SqlBulkCopyColumnMapping("FifthCag", "FifthCag");
+                mappings[6] = new SqlBulkCopyColumnMapping("AppName", "AppName");
+                mappings[7] = new SqlBulkCopyColumnMapping("ProcessName", "ProcessName"); 
+                mappings[8] = new SqlBulkCopyColumnMapping("FirstCag", "FirstCag");
+                mappings[9] = new SqlBulkCopyColumnMapping("SecondCag", "SecondCag");
+                mappings[10] = new SqlBulkCopyColumnMapping("ThirdCag", "ThirdCag"); 
                 mappings[11] = new SqlBulkCopyColumnMapping("MonitorValue", "MonitorValue");
                 mappings[12] = new SqlBulkCopyColumnMapping("Msg", "Msg");
                 if (isDb)
@@ -198,63 +198,24 @@
                         DataRow row = schema.NewRow();
                         ms = sr.ReadLine(); if (null == ms) break;
                         string[] ss = ms.Split(new char[] { '\t' }, StringSplitOptions.None);
-                        if (ss.Length == 12 || ss.Length == 11 || ss.Length == 10 )
+                        if (ss.Length > 11)
                         {
-
-                            if (ss.Length == 12)
-                            {
-                                mv = ss[10].ToDouble();
-                                if (mv < 0) continue;
-                                row[0] = action;
-                                row[1] = ss[0].ToDateTime();
-                                row[2] = ss[1];
-                                row[3] = ss[2];
-                                row[4] = ss[3];
-                                row[5] = ss[4];
-                                row[6] = ss[5];// appName
-                                row[7] = ss[6];//processName
-                                row[8] = ss[7];//className
-                                row[9] = ss[8];//methodName
-                                row[10] = ss[9];//tagName
-                                row[11] = mv;//value
-                                row[12] = ss[11].Length > 256 ? ss[11].Substring(0, 255) : ss[11];
-                            }
-                            else if (ss.Length == 11)
-                            {
-                                mv = ss[9].ToDouble();
-                                if (mv < 0) continue;
-                                row[0] = action;
-                                row[1] = ss[0].ToDateTime();
-                                row[2] = ss[1];
-                                row[3] = ss[2];
-                                row[4] = ss[3];
-                                row[5] = ss[4];
-                                row[6] = ss[5];// appName
-                                row[7] = ss[6];
-                                row[8] = ss[7];
-                                row[9] = ss[8];
-                                row[10] = "reserved";
-                                row[11] = mv;
-                                row[12] = ss[10].Length > 256 ? ss[10].Substring(0, 255) : ss[10];
-                            }
-                            else
-                            {
-                                mv = ss[8].ToDouble();
-                                if (mv < 0) continue;
-                                row[0] = action;
-                                row[1] = ss[0].ToDateTime();
-                                row[2] = ss[1];
-                                row[3] = ss[2];
-                                row[4] = ss[3];
-                                row[5] = ss[4];
-                                row[6] = ss[5];// appName 
-                                row[7] = ss[6];
-                                row[8] = ss[7];
-                                row[9] = ss[7];
-                                row[10] = ss[7];
-                                row[11] = mv;
-                                row[12] = ss[9].Length > 256 ? ss[9].Substring(0, 255) : ss[9];
-                            }
+                            //2016-02-21 13:31:23.720	O5PZK6VZOEB29VZ	192.168.1.95	AC:FD:CE:6E:1E:87	E:\Projects\dova\windows\Samples\bin\Release\	测试应用	Dova.Samples	Program	Main	Test	3440196	测试日志服务 20
+                            mv = ss[10].ToDouble();
+                            if (mv < 0) continue;
+                            row[0] = action;
+                            row[1] = ss[0].ToDateTime();
+                            row[2] = ss[1];//host
+                            row[3] = ss[2];//ip
+                            row[4] = ss[3];//mac
+                            row[5] = ss[4];//apppath
+                            row[6] = ss[5];// appName
+                            row[7] = ss[6];//processName
+                            row[8] = ss[7];//className
+                            row[9] = ss[8];//methodName
+                            row[10] = ss[9];//tagName
+                            row[11] = mv;//value
+                            row[12] = ss[11].Length > 256 ? ss[11].Substring(0, 255) : ss[11];
                             schema.Rows.Add(row);
                         }
                     }
@@ -272,7 +233,7 @@
                 dt.Dispose();
                 schema.Clear();
                 schema.Dispose();
-                Log.Error(e); 
+                Log.Error(e);
                 e = null;
             }
             finally
@@ -286,10 +247,10 @@
             }
         }
 
-        static void  ECCReport(string appName)
+        static void ECCReport(string appName)
         {
-             
-    
+
+
         }
 
 
